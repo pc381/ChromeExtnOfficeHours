@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Office Hour Tracker",
+  "description": "Shows remaining hours to complete an 8‑hour workday on mytime.starmarksv.com",
+  "version": "1.1.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://mytime.starmarksv.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Workday Progress"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mytime.starmarksv.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
